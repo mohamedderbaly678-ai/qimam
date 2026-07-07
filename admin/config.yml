@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: mohamed-derbaly/qimam   # TODO: replace with your GitHub "owner/repo"
+  repo: mohamedderbaly678-ai/qimam   # TODO: replace with your GitHub "owner/repo"
   branch: main
   base_url: https://mohamedderbaly678-ai.github.io/qimam   # free shared OAuth proxy, works without hosting on Netlify
   auth_endpoint: auth
