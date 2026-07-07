@@ -16,3 +16,8 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw]
 
 gem "csv"
+gem "erb"
+gem "faraday-retry"
+
+
+gem "webrick"

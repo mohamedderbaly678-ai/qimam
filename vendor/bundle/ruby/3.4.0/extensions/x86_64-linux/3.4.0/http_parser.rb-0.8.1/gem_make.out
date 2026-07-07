@@ -1,0 +1,19 @@
+current directory: /home/mohamed/qimam/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/mohamed/qimam/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260707-22420-p4mmwa sitelibdir\=./.gem.20260707-22420-p4mmwa clean
+
+current directory: /home/mohamed/qimam/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260707-22420-p4mmwa sitelibdir\=./.gem.20260707-22420-p4mmwa
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: /home/mohamed/qimam/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260707-22420-p4mmwa sitelibdir\=./.gem.20260707-22420-p4mmwa install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20260707-22420-p4mmwa
+
+current directory: /home/mohamed/qimam/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260707-22420-p4mmwa sitelibdir\=./.gem.20260707-22420-p4mmwa clean

@@ -1,0 +1,403 @@
+backend:
+  name: github
+  repo: your-username/your-repo-name   # TODO: replace with your GitHub "owner/repo"
+  branch: main
+  base_url: https://api.netlify.com    # free shared OAuth proxy, works without hosting on Netlify
+  auth_endpoint: auth
+
+# If you would rather test locally without GitHub auth, run `npx decap-server`
+# and uncomment the line below (and comment out the `backend` block above).
+# local_backend: true
+
+publish_mode: editorial_workflow
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "ar"
+
+site_url: https://your-username.github.io/your-repo-name
+display_url: https://your-username.github.io/your-repo-name
+
+collections:
+
+  # ==========================================================
+  # 1. Singleton page sections — one editable file per section
+  # ==========================================================
+  - name: "sections"
+    label: "أقسام الصفحة الرئيسية"
+    files:
+
+      - name: "nav"
+        label: "شريط التنقل (Navbar)"
+        file: "_data/nav.yml"
+        fields:
+          - { label: "نص الشعار", name: "logo_text", widget: "string" }
+          - { label: "صورة الشعار", name: "logo_image", widget: "image" }
+          - label: "روابط القائمة"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "النص", name: "label", widget: "string" }
+              - { label: "الرابط", name: "url", widget: "string" }
+
+      - name: "hero"
+        label: "الواجهة الرئيسية (Hero)"
+        file: "_data/hero.yml"
+        fields:
+          - { label: "صورة الخلفية", name: "background_image", widget: "image" }
+          - { label: "العنوان الرئيسي", name: "title", widget: "string" }
+          - { label: "العنوان الفرعي", name: "subtitle", widget: "text" }
+          - { label: "نص الزر الأول", name: "primary_button_text", widget: "string" }
+          - { label: "رابط الزر الأول", name: "primary_button_url", widget: "string" }
+          - { label: "نص الزر الثاني", name: "secondary_button_text", widget: "string" }
+          - { label: "رابط الزر الثاني", name: "secondary_button_url", widget: "string" }
+
+      - name: "idea_methodology"
+        label: "فكرة المشروع وطريقة التخطيط"
+        file: "_data/idea_methodology.yml"
+        fields:
+          - label: "فكرة المشروع"
+            name: "idea"
+            widget: "object"
+            fields:
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "النص", name: "text", widget: "text" }
+          - label: "طريقة التخطيط"
+            name: "methodology"
+            widget: "object"
+            fields:
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "النص", name: "text", widget: "text" }
+
+      - name: "stats"
+        label: "شريط الإحصائيات"
+        file: "_data/stats.yml"
+        fields:
+          - label: "الإحصائيات"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "الرقم", name: "number", widget: "number", value_type: "int" }
+              - { label: "الوصف", name: "label", widget: "string" }
+
+      - name: "projects_section"
+        label: "قسم المشاريع"
+        file: "_data/projects_section.yml"
+        fields:
+          - { label: "صورة الخلفية", name: "background_image", widget: "image" }
+          - { label: "العنوان", name: "title", widget: "string" }
+          - label: "شارات المشاريع"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "الرقم", name: "number", widget: "number", value_type: "int" }
+              - { label: "الاسم", name: "name", widget: "string" }
+          - label: "تفاصيل المشاريع"
+            name: "project_details"
+            widget: "list"
+            fields:
+              - { label: "اسم المشروع", name: "project_title", widget: "string" }
+              - { label: "أيقونة الفكرة", name: "idea_icon", widget: "image" }
+              - { label: "نص الفكرة", name: "idea_label", widget: "string" }
+              - { label: "أيقونة الطريقة", name: "method_icon", widget: "image" }
+              - { label: "نص الطريقة", name: "method_label", widget: "string" }
+
+      - name: "prize_section"
+        label: "قسم جائزة قِمَم"
+        file: "_data/prize_section.yml"
+        fields:
+          - { label: "صورة البانر", name: "banner_image", widget: "image" }
+          - { label: "شعار الجائزة", name: "emblem_image", widget: "image" }
+          - { label: "عنوان الجائزة", name: "title", widget: "string" }
+          - { label: "عنوان النبذة", name: "about_title", widget: "string" }
+          - { label: "نص النبذة", name: "about_text", widget: "text" }
+          - label: "الجوائز"
+            name: "prizes"
+            widget: "list"
+            fields:
+              - { label: "المركز", name: "place", widget: "string" }
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "قيمة الجائزة", name: "reward", widget: "string" }
+          - label: "إحصائيات الفائزين السابقين"
+            name: "previous_winners_stats"
+            widget: "list"
+            fields:
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "الرقم", name: "number", widget: "number", value_type: "int" }
+              - { label: "الوصف", name: "label", widget: "string" }
+          - label: "خطوات التسجيل"
+            name: "registration_steps"
+            widget: "list"
+            fields:
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "النص", name: "text", widget: "text" }
+
+      - name: "courses_section"
+        label: "قسم الدورات"
+        file: "_data/courses_section.yml"
+        fields:
+          - { label: "صورة الواجهة", name: "hero_image", widget: "image" }
+          - { label: "العنوان", name: "title", widget: "string" }
+          - { label: "نص تعريفي", name: "intro_text", widget: "text" }
+          - label: "الدورة الأولى"
+            name: "course_1"
+            widget: "object"
+            fields:
+              - { label: "عنوان الدورة", name: "title", widget: "string" }
+              - label: "المنهج"
+                name: "syllabus"
+                widget: "list"
+                field: { label: "بند", name: "item", widget: "string" }
+              - label: "الجدول الزمني"
+                name: "timeline"
+                widget: "list"
+                fields:
+                  - { label: "المرحلة", name: "label", widget: "string" }
+                  - { label: "الوصف", name: "text", widget: "string" }
+          - label: "الدورة الثانية"
+            name: "course_2"
+            widget: "object"
+            fields:
+              - { label: "عنوان الدورة", name: "title", widget: "string" }
+              - label: "المنهج"
+                name: "syllabus"
+                widget: "list"
+                field: { label: "بند", name: "item", widget: "string" }
+              - label: "الجدول الزمني"
+                name: "timeline"
+                widget: "list"
+                fields:
+                  - { label: "المرحلة", name: "label", widget: "string" }
+                  - { label: "الوصف", name: "text", widget: "string" }
+          - label: "دورات النساء"
+            name: "women_courses"
+            widget: "object"
+            fields:
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "نص تعريفي", name: "intro_text", widget: "text" }
+
+      - name: "radio_section"
+        label: "قسم الإذاعة"
+        file: "_data/radio_section.yml"
+        fields:
+          - { label: "رسم توضيحي للراديو", name: "radio_illustration", widget: "image" }
+          - { label: "نص التردد", name: "frequency_text", widget: "string" }
+          - { label: "نص زر التشغيل", name: "play_button_text", widget: "string" }
+          - { label: "رابط زر التشغيل", name: "play_button_url", widget: "string" }
+          - { label: "العنوان", name: "title", widget: "string" }
+          - { label: "الوصف", name: "description", widget: "text" }
+          - { label: "نص زر قائمة البرامج", name: "programs_list_button_text", widget: "string" }
+          - { label: "رابط زر قائمة البرامج", name: "programs_list_button_url", widget: "string" }
+          - label: "مشغل البث المباشر"
+            name: "player"
+            widget: "object"
+            fields:
+              - { label: "صورة الغلاف", name: "album_art", widget: "image" }
+              - { label: "عنوان المقطع", name: "track_title", widget: "string" }
+              - { label: "الوقت المنقضي", name: "elapsed_time", widget: "string" }
+          - label: "جدول البرامج"
+            name: "schedule"
+            widget: "list"
+            fields:
+              - { label: "البرنامج", name: "program", widget: "string" }
+              - { label: "التوقيت", name: "time", widget: "string" }
+              - { label: "المدة الزمنية", name: "duration", widget: "string" }
+
+      - name: "about_section"
+        label: "قسم عن المؤسسة"
+        file: "_data/about_section.yml"
+        fields:
+          - label: "الأقسام"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "النص", name: "text", widget: "text" }
+
+      - name: "contact_section"
+        label: "قسم اتصل بنا"
+        file: "_data/contact_section.yml"
+        fields:
+          - { label: "رابط خريطة جوجل المضمنة", name: "map_embed_url", widget: "string" }
+          - { label: "العنوان", name: "title", widget: "string" }
+          - { label: "رابط إرسال النموذج", name: "form_action", widget: "string" }
+          - { label: "سؤال التحقق (كابتشا)", name: "captcha_question", widget: "string" }
+          - { label: "نص زر الإرسال", name: "submit_button_text", widget: "string" }
+          - label: "معلومات التواصل"
+            name: "contact_info"
+            widget: "list"
+            fields:
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "التسمية", name: "label", widget: "string" }
+              - { label: "القيمة", name: "value", widget: "string" }
+
+      - name: "footer"
+        label: "التذييل (Footer)"
+        file: "_data/footer.yml"
+        fields:
+          - { label: "الشعار", name: "logo_image", widget: "image" }
+          - { label: "عنوان التواصل الاجتماعي", name: "social_title", widget: "string" }
+          - { label: "صورة جانبية", name: "side_image", widget: "image" }
+          - label: "روابط التواصل الاجتماعي"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "المنصة", name: "platform", widget: "string" }
+              - { label: "أيقونة", name: "icon", widget: "image" }
+              - { label: "الرابط", name: "url", widget: "string" }
+          - { label: "نص حقوق النشر", name: "copyright_text", widget: "string" }
+          - { label: "اعتماد المطوّر", name: "developer_credit", widget: "string" }
+
+      - name: "misc_titles"
+        label: "عناوين متفرقة"
+        file: "_data/misc_titles.yml"
+        fields:
+          - { label: "عنوان قسم المشاركين", name: "participants_section_title", widget: "string" }
+          - { label: "عنوان معرض الصور", name: "gallery_section_title", widget: "string" }
+          - { label: "عنوان معرض الفيديو", name: "video_gallery_section_title", widget: "string" }
+          - { label: "عنوان قسم المشايخ", name: "teachers_section_title", widget: "string" }
+          - { label: "عنوان قسم النتائج", name: "results_section_title", widget: "string" }
+          - { label: "عنوان فرعي للنتائج", name: "results_section_subtitle", widget: "string" }
+          - { label: "عنوان الدورات المنفذة", name: "executed_courses_title", widget: "string" }
+          - { label: "عنوان آراء العملاء", name: "testimonials_title", widget: "string" }
+
+  # ==========================================================
+  # 2. Repeatable content — add/remove/reorder entries freely
+  # ==========================================================
+  - name: "projects_achieved"
+    label: "المشاريع المنجزة"
+    folder: "_projects_achieved"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "اسم المشروع", name: "title", widget: "string" }
+      - { label: "الرقم", name: "number", widget: "number", value_type: "int" }
+      - { label: "صورة مصغرة", name: "thumbnail", widget: "image" }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+      - { label: "وصف مختصر", name: "body", widget: "markdown", required: false }
+
+  - name: "judges"
+    label: "لجنة التحكيم"
+    folder: "_judges"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "الاسم", name: "name", widget: "string" }
+      - { label: "الصورة", name: "photo", widget: "image" }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+
+  - name: "participants"
+    label: "المشاركون في الجائزة"
+    folder: "_participants"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "الاسم", name: "name", widget: "string" }
+      - { label: "الصورة", name: "photo", widget: "image" }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+      - label: "الدرجات"
+        name: "scores"
+        widget: "list"
+        fields:
+          - { label: "السورة", name: "surah", widget: "string" }
+          - { label: "النسبة المئوية", name: "percentage", widget: "number", value_type: "int", min: 0, max: 100 }
+          - { label: "اللون", name: "color", widget: "color" }
+
+  - name: "gallery"
+    label: "معرض صور الجائزة"
+    folder: "_gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "الصورة", name: "image", widget: "image" }
+      - { label: "الوصف", name: "caption", widget: "string" }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+      - { label: "المجموعة", name: "gallery_group", widget: "string", default: "prize", required: false }
+
+  - name: "courses_executed"
+    label: "الدورات المنفذة"
+    folder: "_courses"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان الدورة", name: "title", widget: "string" }
+      - { label: "الصورة", name: "photo", widget: "image" }
+      - { label: "الوسم الظاهر على الصورة", name: "tag", widget: "string" }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+
+  - name: "teachers"
+    label: "المشايخ / المعلمون"
+    folder: "_teachers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "الاسم", name: "name", widget: "string" }
+      - { label: "صورة جماعية (خلفية الواجهة)", name: "group_photo", widget: "image" }
+      - { label: "الصورة الشخصية الدائرية", name: "profile_photo", widget: "image" }
+      - { label: "صورة كاملة", name: "full_body_photo", widget: "image" }
+      - { label: "تاريخ الميلاد", name: "birthdate", widget: "string" }
+      - { label: "سنة ختم القرآن", name: "quran_completion_year", widget: "number", value_type: "int" }
+      - { label: "تفاصيل الحفظ", name: "memorization_details", widget: "text" }
+      - { label: "صورة الفيديو المصغرة", name: "video_thumbnail", widget: "image" }
+      - { label: "عنوان الفيديو", name: "video_title", widget: "string" }
+      - { label: "رابط الفيديو", name: "video_url", widget: "string" }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+      - label: "الخط الزمني"
+        name: "timeline"
+        widget: "list"
+        fields:
+          - { label: "أيقونة", name: "icon", widget: "image" }
+          - { label: "العنوان", name: "title", widget: "string" }
+          - { label: "النص", name: "text", widget: "text" }
+      - { label: "نبذة إضافية", name: "body", widget: "markdown", required: false }
+
+  - name: "programs"
+    label: "برامج الإذاعة"
+    folder: "_programs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "الصورة المصغرة", name: "thumbnail", widget: "image" }
+      - { label: "التاريخ", name: "date", widget: "datetime" }
+      - { label: "عدد التعليقات", name: "comments_count", widget: "number", value_type: "int", default: 0 }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+
+  - name: "results"
+    label: "نتائج الجائزة"
+    folder: "_results"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "الاسم", name: "name", widget: "string" }
+      - { label: "الترتيب", name: "rank", widget: "number", value_type: "int" }
+      - { label: "التقييم", name: "evaluation", widget: "string" }
+      - { label: "الملاحظات", name: "notes", widget: "text", required: false }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+
+  - name: "video_gallery"
+    label: "معرض الفيديو"
+    folder: "_video_gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "الصورة المصغرة", name: "thumbnail", widget: "image" }
+      - { label: "رابط الفيديو", name: "video_url", widget: "string" }
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
+
+  - name: "testimonials"
+    label: "آراء العملاء"
+    folder: "_testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "الاسم", name: "name", widget: "string" }
+      - { label: "الصورة", name: "photo", widget: "image" }
+      - { label: "الرأي", name: "quote", widget: "text" }
+      - { label: "ترتيب العرض", name: "order", widget: "number", value_type: "int", default: 1 }
