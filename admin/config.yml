@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: your-username/your-repo-name   # TODO: replace with your GitHub "owner/repo"
+  repo: mohamed-derbaly/qimam   # TODO: replace with your GitHub "owner/repo"
   branch: main
-  base_url: https://api.netlify.com    # free shared OAuth proxy, works without hosting on Netlify
+  base_url: https://mohamedderbaly678-ai.github.io/qimam   # free shared OAuth proxy, works without hosting on Netlify
   auth_endpoint: auth
 
 # If you would rather test locally without GitHub auth, run `npx decap-server`
