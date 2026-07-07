@@ -1,0 +1,47 @@
+<section class="projects" id="projects" style="background-image: url('{{ site.data.projects_section.background_image | relative_url }}');">
+  <div class="projects__overlay"></div>
+  <div class="container projects__content">
+    <h2 class="section-title section-title--light">{{ site.data.projects_section.title }}</h2>
+    <div class="projects__badges">
+      {% for p in site.data.projects_section.projects %}
+      <div class="projects__badge">
+        <div class="projects__badge-circle">{{ p.number }}</div>
+        <span>{{ p.name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="project-details">
+  <div class="container project-details__grid">
+    {% for detail in site.data.projects_section.project_details %}
+    <div class="project-details__card">
+      <h3>{{ detail.project_title }}</h3>
+      <div class="project-details__row">
+        <img src="{{ detail.idea_icon | relative_url }}" alt="">
+        <span>{{ detail.idea_label }}</span>
+      </div>
+      <div class="project-details__row">
+        <img src="{{ detail.method_icon | relative_url }}" alt="">
+        <span>{{ detail.method_label }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="achieved-projects">
+  <div class="container">
+    <div class="achieved-projects__list">
+      {% assign achieved = site.projects_achieved | sort: 'order' %}
+      {% for project in achieved %}
+      <div class="achieved-projects__card" style="background-image: url('{{ project.thumbnail | relative_url }}');">
+        <div class="achieved-projects__overlay"></div>
+        <div class="achieved-projects__badge">{{ project.number }}</div>
+        <h4>{{ project.title }}</h4>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

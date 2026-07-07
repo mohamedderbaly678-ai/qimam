@@ -1,0 +1,29 @@
+radio_illustration: /assets/images/radio-illustration-placeholder.svg
+frequency_text: "FM 14.5"
+play_button_text: "تشغيل البث الحي"
+play_button_url: "#"
+title: "قناة قِمَم المسموعة"
+description: >
+  قناة إذاعية تبث محتوى قرآنياً وتربوياً متنوعاً على مدار اليوم، من تلاوات مختارة
+  إلى برامج تجويدية وحوارات تربوية هادفة.
+programs_list_button_text: "قائمة البرامج"
+programs_list_button_url: "#radio-programs"
+
+player:
+  album_art: /assets/images/logo-gold-placeholder.svg
+  track_title: "QIMAM TALK"
+  elapsed_time: "01:06:46"
+
+schedule:
+  - program: "قراءات مختارة"
+    time: "05:30"
+    duration: "20 دقيقة"
+  - program: "القراءات التجويدية"
+    time: "08:30"
+    duration: "30 دقيقة"
+  - program: "أصوات من الذاكرة"
+    time: "10:30"
+    duration: "15 دقيقة"
+  - program: "تأملات في آيات القرآن"
+    time: "13:30"
+    duration: "15 دقيقة"

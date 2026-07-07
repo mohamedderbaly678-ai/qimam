@@ -1,0 +1,20 @@
+background_image: /assets/images/projects-background-placeholder.jpg
+title: "مشاريع قِمَم الأندلس"
+projects:
+  - number: 1
+    name: "قِمَم الأندلس 1"
+  - number: 2
+    name: "قِمَم الأندلس 2"
+  - number: 3
+    name: "قِمَم الأندلس 3"
+project_details:
+  - project_title: "قِمَم الأندلس 1"
+    idea_icon: /assets/images/icon-lightbulb.svg
+    idea_label: "فكرة المشروع"
+    method_icon: /assets/images/icon-speech-bubbles.svg
+    method_label: "طريقة التخطيط"
+  - project_title: "قِمَم الأندلس 2"
+    idea_icon: /assets/images/icon-lightbulb.svg
+    idea_label: "فكرة المشروع"
+    method_icon: /assets/images/icon-speech-bubbles.svg
+    method_label: "طريقة التخطيط"

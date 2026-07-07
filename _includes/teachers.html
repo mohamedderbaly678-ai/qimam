@@ -1,0 +1,60 @@
+<section class="teachers" id="teachers">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.teachers_section_title }}</h2>
+  </div>
+
+  {% assign teachers = site.teachers | sort: 'order' %}
+  {% for teacher in teachers %}
+  <div class="teacher-profile">
+    <div class="teacher-profile__hero" style="background-image: url('{{ teacher.group_photo | relative_url }}');">
+      <div class="teacher-profile__hero-overlay"></div>
+      <img src="{{ teacher.profile_photo | relative_url }}" alt="{{ teacher.name }}" class="teacher-profile__portrait">
+      <h3>{{ teacher.name }}</h3>
+    </div>
+
+    <div class="container teacher-profile__bio">
+      <img src="{{ teacher.full_body_photo | relative_url }}" alt="{{ teacher.name }}" class="teacher-profile__fullbody">
+      <div class="teacher-profile__info">
+        <div class="teacher-profile__pill">
+          <span class="teacher-profile__pill-icon">✓</span>
+          <span>{{ teacher.name }}</span>
+        </div>
+        <div class="teacher-profile__pill">
+          <span class="teacher-profile__pill-icon">📅</span>
+          <span>تاريخ الميلاد: {{ teacher.birthdate }}</span>
+        </div>
+        <div class="teacher-profile__pill">
+          <span class="teacher-profile__pill-icon">📖</span>
+          <span>سنة ختم القرآن: {{ teacher.quran_completion_year }}</span>
+        </div>
+        <p>{{ teacher.memorization_details }}</p>
+      </div>
+    </div>
+
+    <div class="container teacher-profile__timeline-video">
+      <div class="teacher-profile__timeline">
+        {% for step in teacher.timeline %}
+        <div class="teacher-profile__timeline-item">
+          <img src="{{ step.icon | relative_url }}" alt="">
+          <div>
+            <strong>{{ step.title }}</strong>
+            <p>{{ step.text }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <a href="{{ teacher.video_url }}" class="teacher-profile__video" target="_blank" rel="noopener">
+        <img src="{{ teacher.video_thumbnail | relative_url }}" alt="{{ teacher.video_title }}">
+        <span class="teacher-profile__play">▶</span>
+        <strong>{{ teacher.video_title }}</strong>
+      </a>
+    </div>
+
+    {% if teacher.content and teacher.content != "" %}
+    <div class="container teacher-profile__extra">
+      {{ teacher.content }}
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</section>

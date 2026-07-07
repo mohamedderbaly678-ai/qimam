@@ -1,0 +1,16 @@
+items:
+  - icon: /assets/images/icon-graduation-cap.svg
+    number: 40
+    label: "خريج"
+  - icon: /assets/images/icon-book.svg
+    number: 22
+    label: "معلم"
+  - icon: /assets/images/icon-users.svg
+    number: 15
+    label: "عضو لجنة"
+  - icon: /assets/images/icon-radio-tower.svg
+    number: 820
+    label: "مستمع للبث المباشر"
+  - icon: /assets/images/icon-trophy.svg
+    number: 8
+    label: "جائزة"

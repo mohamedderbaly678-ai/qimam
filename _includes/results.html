@@ -1,0 +1,27 @@
+<section class="results" id="results">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.results_section_title }}</h2>
+    <p class="results__subtitle">{{ site.data.misc_titles.results_section_subtitle }}</p>
+    <table class="results__table">
+      <thead>
+        <tr>
+          <th>الاسم</th>
+          <th>الترتيب</th>
+          <th>التقييم</th>
+          <th>الملاحظات</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign results = site.results | sort: 'order' %}
+        {% for r in results %}
+        <tr>
+          <td>{{ r.name }}</td>
+          <td>{{ r.rank }}</td>
+          <td>{{ r.evaluation }}</td>
+          <td>{{ r.notes }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>

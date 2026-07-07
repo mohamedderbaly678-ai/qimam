@@ -1,0 +1,31 @@
+map_embed_url: "https://www.google.com/maps?q=Tripoli,Libya&output=embed"
+title: "اتصل بنا"
+form_action: "#"
+captcha_question: "3 + 1 = ؟"
+submit_button_text: "إرسال"
+
+contact_info:
+  - icon: /assets/images/icon-map-pin.svg
+    label: "العنوان"
+    value: "مسجد ..، مدينة طرابلس، ليبيا"
+  - icon: /assets/images/icon-phone.svg
+    label: "الهاتف"
+    value: "+218-XX-XXXXXXX"
+  - icon: /assets/images/icon-clock.svg
+    label: "ساعات العمل"
+    value: "الأحد - الخميس، 9:00 ص - 8:00 م"
+  - icon: /assets/images/icon-envelope.svg
+    label: "البريد الإلكتروني"
+    value: "info@qimam.com.ly"
+  - icon: /assets/images/icon-globe.svg
+    label: "الموقع الإلكتروني"
+    value: "http://www.qimam.com.ly/"
+  - icon: /assets/images/icon-facebook.svg
+    label: "فيسبوك"
+    value: "facebook.com/qimam"
+  - icon: /assets/images/icon-twitter.svg
+    label: "تويتر (X)"
+    value: "x.com/qimam"
+  - icon: /assets/images/icon-mailbox.svg
+    label: "صندوق البريد"
+    value: "ص.ب: XXXX"

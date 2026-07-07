@@ -1,0 +1,11 @@
+<section class="about" id="about">
+  <div class="container about__grid">
+    {% for s in site.data.about_section.sections %}
+    <div class="about__item">
+      <img src="{{ s.icon | relative_url }}" alt="" class="about__icon">
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>

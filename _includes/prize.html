@@ -1,0 +1,98 @@
+<section class="prize" id="prize" style="background-image: url('{{ site.data.prize_section.banner_image | relative_url }}');">
+  <div class="prize__overlay"></div>
+  <div class="container prize__banner">
+    <img src="{{ site.data.prize_section.emblem_image | relative_url }}" alt="" class="prize__emblem">
+    <h2>{{ site.data.prize_section.title }}</h2>
+    <h3>{{ site.data.prize_section.about_title }}</h3>
+    <p>{{ site.data.prize_section.about_text }}</p>
+  </div>
+</section>
+
+<section class="prize-grid">
+  <div class="container prize-grid__columns">
+    <div class="prize-grid__col">
+      <h4>الجوائز</h4>
+      {% for prize in site.data.prize_section.prizes %}
+      <div class="prize-grid__item">
+        <img src="{{ prize.icon | relative_url }}" alt="">
+        <div>
+          <strong>{{ prize.place }}</strong>
+          <span>{{ prize.reward }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="prize-grid__col">
+      <h4>لجنة التحكيم</h4>
+      {% assign judges = site.judges | sort: 'order' %}
+      {% for judge in judges %}
+      <div class="prize-grid__judge">
+        <img src="{{ judge.photo | relative_url }}" alt="{{ judge.name }}" class="prize-grid__judge-photo">
+        <span>{{ judge.name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="prize-stats">
+  <div class="container prize-stats__grid">
+    {% for s in site.data.prize_section.previous_winners_stats %}
+    <div class="prize-stats__item">
+      <img src="{{ s.icon | relative_url }}" alt="">
+      <span class="prize-stats__number" data-count="{{ s.number }}">0</span>
+      <span class="prize-stats__label">{{ s.label }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="registration-steps">
+  <div class="container registration-steps__grid">
+    {% for step in site.data.prize_section.registration_steps %}
+    <div class="registration-steps__item">
+      <img src="{{ step.icon | relative_url }}" alt="">
+      <h5>{{ step.title }}</h5>
+      <p>{{ step.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="participants">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.participants_section_title }}</h2>
+    <div class="participants__grid">
+      {% assign participants = site.participants | sort: 'order' %}
+      {% for person in participants %}
+      <div class="participants__card">
+        <img src="{{ person.photo | relative_url }}" alt="{{ person.name }}" class="participants__photo">
+        <h5>{{ person.name }}</h5>
+        {% for score in person.scores %}
+        <div class="participants__score-row">
+          <span class="participants__score-label">{{ score.surah }}</span>
+          <div class="participants__score-bar-track">
+            <div class="participants__score-bar-fill" style="width: {{ score.percentage }}%; background-color: {{ score.color }};"></div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="gallery-masonry">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.gallery_section_title }}</h2>
+    <div class="gallery-masonry__grid">
+      {% assign gallery = site.gallery | sort: 'order' %}
+      {% for photo in gallery %}
+      <figure class="gallery-masonry__item">
+        <img src="{{ photo.image | relative_url }}" alt="{{ photo.caption }}">
+        <figcaption>{{ photo.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>

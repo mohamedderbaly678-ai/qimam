@@ -1,0 +1,11 @@
+<section class="hero" id="home" style="background-image: url('{{ site.data.hero.background_image | relative_url }}');">
+  <div class="hero__overlay"></div>
+  <div class="hero__content container">
+    <h1 class="hero__title">{{ site.data.hero.title }}</h1>
+    <p class="hero__subtitle">{{ site.data.hero.subtitle }}</p>
+    <div class="hero__ctas">
+      <a href="{{ site.data.hero.primary_button_url }}" class="btn btn--solid">{{ site.data.hero.primary_button_text }}</a>
+      <a href="{{ site.data.hero.secondary_button_url }}" class="btn btn--outline">{{ site.data.hero.secondary_button_text }}</a>
+    </div>
+  </div>
+</section>

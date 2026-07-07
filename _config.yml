@@ -1,0 +1,49 @@
+title: "مؤسسة قِمَمُ الأندلس"
+description: "مؤسسة تعليمية قرآنية تهدف إلى تخريج جيلٍ مُتمسكٍ بالكتاب والسنة"
+lang: ar
+direction: rtl
+
+# IMPORTANT: change this to your real GitHub Pages URL before publishing.
+# If publishing to https://<user>.github.io/<repo>/ set baseurl: "/<repo>"
+# If publishing to a custom domain or https://<user>.github.io/ set baseurl: ""
+url: "https://your-username.github.io"
+baseurl: "/qimam-al-andalus"
+
+collections:
+  courses:
+    output: false
+  judges:
+    output: false
+  gallery:
+    output: false
+  testimonials:
+    output: false
+  teachers:
+    output: true
+    permalink: /teachers/:path/
+  programs:
+    output: false
+  results:
+    output: false
+  video_gallery:
+    output: false
+  projects_achieved:
+    output: false
+  participants:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+
+plugins:
+  - jekyll-relative-links

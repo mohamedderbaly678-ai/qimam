@@ -1,0 +1,26 @@
+logo_image: /assets/images/logo-placeholder.svg
+social_title: "مواقع التواصل الاجتماعي"
+side_image: /assets/images/footer-keyboard-placeholder.jpg
+
+social_links:
+  - platform: "Facebook"
+    icon: /assets/images/icon-facebook.svg
+    url: "https://facebook.com/qimam"
+  - platform: "Twitter"
+    icon: /assets/images/icon-twitter.svg
+    url: "https://x.com/qimam"
+  - platform: "YouTube"
+    icon: /assets/images/icon-youtube.svg
+    url: "https://youtube.com/@qimam"
+  - platform: "Pinterest"
+    icon: /assets/images/icon-pinterest.svg
+    url: "https://pinterest.com/qimam"
+  - platform: "SoundCloud"
+    icon: /assets/images/icon-soundcloud.svg
+    url: "https://soundcloud.com/qimam"
+  - platform: "Tumblr"
+    icon: /assets/images/icon-tumblr.svg
+    url: "https://qimam.tumblr.com"
+
+copyright_text: "جميع الحقوق محفوظة © مؤسسة قِمَم الأندلس"
+developer_credit: "powered by your-agency-name"

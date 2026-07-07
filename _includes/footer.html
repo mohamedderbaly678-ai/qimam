@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  <div class="container site-footer__top">
+    <img src="{{ site.data.footer.logo_image | relative_url }}" alt="{{ site.data.nav.logo_text }}" class="site-footer__logo">
+    <h3>{{ site.data.footer.social_title }}</h3>
+  </div>
+
+  <div class="container site-footer__grid">
+    <div class="site-footer__social">
+      {% for link in site.data.footer.social_links %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener" class="site-footer__social-link" aria-label="{{ link.platform }}">
+        <img src="{{ link.icon | relative_url }}" alt="{{ link.platform }}">
+      </a>
+      {% endfor %}
+    </div>
+    <div class="site-footer__image">
+      <img src="{{ site.data.footer.side_image | relative_url }}" alt="">
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <p>{{ site.data.footer.copyright_text }}</p>
+    <span class="site-footer__credit">{{ site.data.footer.developer_credit }}</span>
+  </div>
+</footer>

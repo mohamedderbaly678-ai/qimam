@@ -1,0 +1,87 @@
+<section class="radio" id="radio">
+  <div class="container radio__grid">
+    <div class="radio__left">
+      <img src="{{ site.data.radio_section.radio_illustration | relative_url }}" alt="" class="radio__illustration">
+      <div class="radio__frequency">{{ site.data.radio_section.frequency_text }}</div>
+      <a href="{{ site.data.radio_section.play_button_url }}" class="btn btn--solid">{{ site.data.radio_section.play_button_text }}</a>
+    </div>
+    <div class="radio__right">
+      <h2>{{ site.data.radio_section.title }}</h2>
+      <p>{{ site.data.radio_section.description }}</p>
+      <a href="{{ site.data.radio_section.programs_list_button_url }}" class="btn btn--outline-dark">{{ site.data.radio_section.programs_list_button_text }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.testimonials_title }}</h2>
+    <div class="testimonials__slider" id="testimonialSlider">
+      {% assign testimonials = site.testimonials | sort: 'order' %}
+      {% for t in testimonials %}
+      <div class="testimonials__slide{% if forloop.first %} is-active{% endif %}">
+        <img src="{{ t.photo | relative_url }}" alt="{{ t.name }}" class="testimonials__photo">
+        <p class="testimonials__quote">{{ t.quote }}</p>
+        <strong>{{ t.name }}</strong>
+      </div>
+      {% endfor %}
+      <button class="testimonials__arrow testimonials__arrow--prev" aria-label="السابق">‹</button>
+      <button class="testimonials__arrow testimonials__arrow--next" aria-label="التالي">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="live-player">
+  <div class="container live-player__widget">
+    <img src="{{ site.data.radio_section.player.album_art | relative_url }}" alt="" class="live-player__art">
+    <div class="live-player__info">
+      <strong>{{ site.data.radio_section.player.track_title }}</strong>
+      <span class="live-player__time">{{ site.data.radio_section.player.elapsed_time }}</span>
+    </div>
+    <div class="live-player__controls">
+      <button class="live-player__play" aria-label="تشغيل / إيقاف">▶</button>
+      <input type="range" class="live-player__progress" min="0" max="100" value="35">
+      <input type="range" class="live-player__volume" min="0" max="100" value="70" aria-label="مستوى الصوت">
+    </div>
+  </div>
+</section>
+
+<section class="schedule" id="schedule">
+  <div class="container">
+    <h2 class="section-title section-title--light">جدول البرامج</h2>
+    <table class="schedule__table">
+      <thead>
+        <tr>
+          <th>البرنامج</th>
+          <th>التوقيت</th>
+          <th>المدة الزمنية</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in site.data.radio_section.schedule %}
+        <tr>
+          <td>{{ row.program }}</td>
+          <td>{{ row.time }}</td>
+          <td>{{ row.duration }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="radio-programs" id="radio-programs">
+  <div class="container radio-programs__grid">
+    {% assign programs = site.programs | sort: 'order' %}
+    {% for program in programs %}
+    <div class="radio-programs__card">
+      <img src="{{ program.thumbnail | relative_url }}" alt="{{ program.title }}">
+      <h4>{{ program.title }}</h4>
+      <div class="radio-programs__meta">
+        <span>{{ program.date | date: "%d/%m/%Y" }}</span>
+        <span>تعليقات {{ program.comments_count }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

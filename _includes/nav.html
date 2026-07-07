@@ -1,0 +1,20 @@
+<header class="navbar" id="site-navbar">
+  <div class="navbar__inner container">
+    <a class="navbar__brand" href="#home">
+      <img src="{{ site.data.nav.logo_image | relative_url }}" alt="{{ site.data.nav.logo_text }}" class="navbar__logo">
+      <span class="navbar__brand-text">{{ site.data.nav.logo_text }}</span>
+    </a>
+
+    <button class="navbar__toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="navbar__menu" id="navMenu">
+      <ul>
+        {% for link in site.data.nav.links %}
+        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

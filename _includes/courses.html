@@ -1,0 +1,55 @@
+<section class="courses" id="courses" style="background-image: url('{{ site.data.courses_section.hero_image | relative_url }}');">
+  <div class="courses__overlay"></div>
+  <div class="container courses__intro">
+    <h2>{{ site.data.courses_section.title }}</h2>
+    <p>{{ site.data.courses_section.intro_text }}</p>
+  </div>
+</section>
+
+<section class="course-cards">
+  <div class="container course-cards__grid">
+    {% assign courses = site.data.courses_section %}
+    {% for c in "course_1,course_2" | split: "," %}
+      {% assign course = courses[c] %}
+      <div class="course-card">
+        <h3>{{ course.title }}</h3>
+        <ul class="course-card__syllabus">
+          {% for point in course.syllabus %}
+          <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+        <div class="course-card__timeline">
+          {% for step in course.timeline %}
+          <div class="course-card__timeline-step">
+            <span class="course-card__timeline-dot"></span>
+            <strong>{{ step.label }}</strong>
+            <p>{{ step.text }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="women-courses" id="women-courses">
+  <div class="container">
+    <h2 class="section-title section-title--pink">{{ site.data.courses_section.women_courses.title }}</h2>
+    <p>{{ site.data.courses_section.women_courses.intro_text }}</p>
+  </div>
+</section>
+
+<section class="executed-courses">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.executed_courses_title }}</h2>
+    <div class="executed-courses__grid">
+      {% assign courses_list = site.courses | sort: 'order' %}
+      {% for course in courses_list %}
+      <div class="executed-courses__card" style="background-image: url('{{ course.photo | relative_url }}');">
+        <div class="executed-courses__overlay"></div>
+        <span>{{ course.tag }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

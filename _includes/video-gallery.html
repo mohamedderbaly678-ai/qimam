@@ -1,0 +1,21 @@
+<section class="video-gallery">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.video_gallery_section_title }}</h2>
+    <div class="video-gallery__grid">
+      {% assign videos = site.video_gallery | sort: 'order' %}
+      {% for v in videos %}
+      <a href="{{ v.video_url }}" target="_blank" rel="noopener" class="video-gallery__item" style="background-image: url('{{ v.thumbnail | relative_url }}');">
+        <span class="video-gallery__play">▶</span>
+        <span class="video-gallery__title">{{ v.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="photo-strip">
+      {% assign gallery = site.gallery | sort: 'order' %}
+      {% for photo in gallery %}
+      <img src="{{ photo.image | relative_url }}" alt="{{ photo.caption }}" class="photo-strip__item">
+      {% endfor %}
+    </div>
+  </div>
+</section>

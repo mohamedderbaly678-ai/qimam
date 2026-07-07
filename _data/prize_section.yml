@@ -1,0 +1,43 @@
+banner_image: /assets/images/prize-banner-placeholder.jpg
+emblem_image: /assets/images/prize-emblem-gold.svg
+title: "جائزة قِمَم للقرآن 1"
+about_title: "نبذة عن جائزة قِمَم 1"
+about_text: >
+  جائزة قِمَم للقرآن هي مسابقة سنوية تهدف إلى تكريم المتميزين في حفظ وتلاوة كتاب الله،
+  وتحفيز الطلاب على الإتقان والاستمرار في طريق القرآن الكريم.
+
+prizes:
+  - place: "المركز الأول"
+    icon: /assets/images/icon-medal-gold.svg
+    reward: "5000 دينار ليبي"
+  - place: "المركز الثاني"
+    icon: /assets/images/icon-medal-silver.svg
+    reward: "3000 دينار ليبي"
+  - place: "المركز الثالث"
+    icon: /assets/images/icon-medal-bronze.svg
+    reward: "1500 دينار ليبي"
+
+previous_winners_stats:
+  - icon: /assets/images/icon-thumb.svg
+    number: 50000
+    label: "مستفيد"
+  - icon: /assets/images/icon-medal.svg
+    number: 90
+    label: "قارئ"
+  - icon: /assets/images/icon-trophy.svg
+    number: 3
+    label: "فائز"
+
+registration_steps:
+  - icon: /assets/images/icon-calendar.svg
+    title: "التسجيل"
+    text: "فتح باب التسجيل الإلكتروني للمشاركين."
+  - icon: /assets/images/icon-laptop.svg
+    title: "الاختبار الإلكتروني"
+    text: "اختبار أولي عبر الإنترنت لتقييم المستوى."
+  - icon: /assets/images/icon-handshake.svg
+    title: "الاختبار المباشر"
+    text: "اختبار شفهي مباشر أمام لجنة التحكيم."
+  - icon: /assets/images/icon-megaphone.svg
+    title: "الإعلان عن النتائج"
+    text: "الإعلان عن الفائزين وموعد حفل التكريم."

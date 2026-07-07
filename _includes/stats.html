@@ -1,0 +1,11 @@
+<section class="stats">
+  <div class="container stats__grid">
+    {% for item in site.data.stats.items %}
+    <div class="stats__item">
+      <img src="{{ item.icon | relative_url }}" alt="" class="stats__icon">
+      <span class="stats__number" data-count="{{ item.number }}">0</span>
+      <span class="stats__label">{{ item.label }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
