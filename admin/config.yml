@@ -1,9 +1,12 @@
 backend:
-  name: github
-  repo: mohamedderbaly678-ai/qimam   # TODO: replace with your GitHub "owner/repo"
+  name: git-gateway
+  repo: mohamedderbaly678-ai/qimam
   branch: main
-  base_url: https://mohamedderbaly678-ai.github.io/qimam   # free shared OAuth proxy, works without hosting on Netlify
-  auth_endpoint: auth
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/d99b3fec-8101-426e-89d7-374192bacf0f/pkce
+  auth_token_endpoint: /sites/d99b3fec-8101-426e-89d7-374192bacf0f/token
+  gateway_url: https://gateway.decapbridge.com
 
 # If you would rather test locally without GitHub auth, run `npx decap-server`
 # and uncomment the line below (and comment out the `backend` block above).
@@ -15,8 +18,8 @@ public_folder: "/assets/uploads"
 
 locale: "ar"
 
-site_url: https://your-username.github.io/your-repo-name
-display_url: https://your-username.github.io/your-repo-name
+site_url: https://mohamedderbaly678-ai.github.io/qimam
+display_url: https://mohamedderbaly678-ai.github.io/qimam
 
 collections:
 
