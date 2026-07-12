@@ -1,19 +1,17 @@
-logo_text: "قِمَمُ الأندلس"
+logo_text: قِمَمُ الأندلس
 logo_image: /assets/images/logo-placeholder.svg
 links:
-  - label: "الرئيسية"
+  - label: الرئيسية
     url: "#home"
-  - label: "عن المؤسسة"
+  - label: عن المؤسسة
     url: "#about"
-  - label: "المشاريع"
+  - label: المشاريع
     url: "#projects"
-  - label: "الدورات"
+  - label: الدورات
     url: "#courses"
-  - label: "جائزة قِمَم"
+  - label: جائزة قِمَم
     url: "#prize"
-  - label: "القناة"
+  - label: القناة
     url: "#radio"
-  - label: "الأخبار"
-    url: "#news"
-  - label: "اتصل بنا"
+  - label: اتصل بنا
     url: "#contact"
