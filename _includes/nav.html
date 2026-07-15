@@ -12,7 +12,7 @@
     <nav class="navbar__menu" id="navMenu">
       <ul>
         {% for link in site.data.nav.links %}
-        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+        <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
         {% endfor %}
       </ul>
     </nav>

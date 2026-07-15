@@ -1,6 +1,5 @@
 logo_image: /assets/images/logo-placeholder.svg
 social_title: "مواقع التواصل الاجتماعي"
-side_image: /assets/images/footer-keyboard-placeholder.jpg
 
 social_links:
   - platform: "Facebook"
@@ -21,6 +20,30 @@ social_links:
   - platform: "Tumblr"
     icon: /assets/images/icon-tumblr.svg
     url: "https://qimam.tumblr.com"
+
+contact_info:
+  - icon: /assets/images/icon-map-pin.svg
+    label: "العنوان"
+    value: "مسجد ..، مدينة طرابلس، ليبيا"
+  - icon: /assets/images/icon-phone.svg
+    label: "الهاتف"
+    value: "+218-XX-XXXXXXX"
+  - icon: /assets/images/icon-clock.svg
+    label: "ساعات العمل"
+    value: "الأحد - الخميس، 9:00 ص - 8:00 م"
+  - icon: /assets/images/icon-envelope.svg
+    label: "البريد الإلكتروني"
+    value: "info@qimam.com.ly"
+  - icon: /assets/images/icon-globe.svg
+    label: "الموقع الإلكتروني"
+    value: "http://www.qimam.com.ly/"
+  - icon: /assets/images/icon-mailbox.svg
+    label: "صندوق البريد"
+    value: "ص.ب: XXXX"
+
+map_address: "Tripoli, Libya"
+map_latitude: 32.8872
+map_longitude: 13.1913
 
 copyright_text: "جميع الحقوق محفوظة © مؤسسة قِمَم الأندلس"
 developer_credit: "powered by your-agency-name"

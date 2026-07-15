@@ -1,0 +1,11 @@
+background_image: /assets/images/courses-stats-background-placeholder.jpg
+items:
+  - icon: /assets/images/icon-users.svg
+    number: 820
+    label: "طالب"
+  - icon: /assets/images/icon-book.svg
+    number: 15
+    label: "المدرسون"
+  - icon: /assets/images/icon-graduation-cap.svg
+    number: 8
+    label: "عدد الدورات"

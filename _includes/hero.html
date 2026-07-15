@@ -1,11 +1,31 @@
-<section class="hero" id="home" style="background-image: url('{{ site.data.hero.background_image | relative_url }}');">
-  <div class="hero__overlay"></div>
-  <div class="hero__content container">
-    <h1 class="hero__title">{{ site.data.hero.title }}</h1>
-    <p class="hero__subtitle">{{ site.data.hero.subtitle }}</p>
-    <div class="hero__ctas">
-      <a href="{{ site.data.hero.primary_button_url }}" class="btn btn--solid">{{ site.data.hero.primary_button_text }}</a>
-      <a href="{{ site.data.hero.secondary_button_url }}" class="btn btn--outline">{{ site.data.hero.secondary_button_text }}</a>
-    </div>
+<section class="hero" id="home">
+  {% assign news_items = site.news | sort: 'order' %}
+  <div class="hero__slider" id="heroSlider">
+    {% if news_items.size > 0 %}
+      {% for n in news_items %}
+      <div class="hero__slide{% if forloop.first %} is-active{% endif %}" style="background-image: url('{{ n.image | relative_url }}');">
+        <div class="hero__overlay"></div>
+        <div class="hero__content container">
+          <h1 class="hero__title">{{ n.title }}</h1>
+          {% if n.subtitle %}<p class="hero__subtitle">{{ n.subtitle }}</p>{% endif %}
+          <a href="{{ site.data.hero.button_url | relative_url }}" class="btn btn--outline">{{ site.data.hero.button_text }}</a>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="hero__slide is-active" style="background-image: url('{{ site.data.hero.fallback_image | relative_url }}');">
+        <div class="hero__overlay"></div>
+        <div class="hero__content container">
+          <h1 class="hero__title">{{ site.data.hero.fallback_title }}</h1>
+          <p class="hero__subtitle">{{ site.data.hero.fallback_subtitle }}</p>
+          <a href="{{ site.data.hero.button_url | relative_url }}" class="btn btn--outline">{{ site.data.hero.button_text }}</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if news_items.size > 1 %}
+    <button class="hero__arrow hero__arrow--prev" aria-label="السابق">‹</button>
+    <button class="hero__arrow hero__arrow--next" aria-label="التالي">›</button>
+    {% endif %}
   </div>
 </section>

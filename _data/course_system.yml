@@ -1,0 +1,15 @@
+theme_color: "#00A4CC"
+title: "نظام الدورات"
+cards:
+  - icon: /assets/images/icon-requirements.svg
+    title: "المتطلبات"
+    text: "لا تشترط الدورة مستوى معيناً مسبقاً، ويكفي حسن النية والرغبة في التعلم."
+  - icon: /assets/images/icon-calendar.svg
+    title: "الوقت"
+    text: "تمتد الدورة على عدة أسابيع بجلسات أسبوعية منتظمة."
+  - icon: /assets/images/icon-registration.svg
+    title: "طريقة التسجيل"
+    text: "التسجيل إلكترونياً عبر الموقع، يليه تواصل من فريق التنسيق لتأكيد الالتحاق."
+  - icon: /assets/images/icon-exam.svg
+    title: "الاختبارات المعتمدة"
+    text: "اختبار تحريري وشفوي في نهاية الدورة لمنح الشهادة المعتمدة."

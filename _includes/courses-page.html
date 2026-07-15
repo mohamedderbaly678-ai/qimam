@@ -1,0 +1,169 @@
+<section class="courses-hero" style="background-image: url('{{ site.data.courses_page.hero_image | relative_url }}');">
+  <div class="courses-hero__overlay"></div>
+  <div class="container courses-hero__content">
+    <h1>{{ site.data.courses_page.hero_title }}</h1>
+  </div>
+</section>
+
+<section class="courses-intro">
+  <div class="container courses-intro__content">
+    <h2>{{ site.data.courses_page.intro_title }}</h2>
+    <p>{{ site.data.courses_page.intro_text }}</p>
+  </div>
+</section>
+
+{% assign meta = site.data.course_meta_icons %}
+{% assign course_blocks = site.course_blocks | sort: 'order' %}
+
+{% assign men_courses = course_blocks | where: "audience", "رجال" %}
+{% if men_courses.size > 0 %}
+<div class="course-blocks-group">
+  {% for course in men_courses %}
+  <section class="course-block">
+    <div class="container course-block__grid">
+      <div class="course-block__info">
+        <h3>{{ course.title }}</h3>
+        <div class="course-block__description">{{ course.content }}</div>
+        <div class="course-block__meta-row">
+          <div class="course-block__meta-item">
+            <span class="course-block__meta-icon"><img src="{{ meta.duration_icon | relative_url }}" alt=""></span>
+            <span class="course-block__meta-label">{{ course.duration_label }}</span>
+            <span class="course-block__meta-value">{{ course.duration_value }}</span>
+          </div>
+          <div class="course-block__meta-item">
+            <span class="course-block__meta-icon"><img src="{{ meta.certificate_icon | relative_url }}" alt=""></span>
+            <span class="course-block__meta-label">{{ course.certificate_label }}</span>
+            <span class="course-block__meta-value">{{ course.certificate_value }}</span>
+          </div>
+          <div class="course-block__meta-item">
+            <span class="course-block__meta-icon"><img src="{{ meta.category_icon | relative_url }}" alt=""></span>
+            <span class="course-block__meta-label">{{ course.category_label }}</span>
+            <span class="course-block__meta-value">{{ course.category_value }}</span>
+          </div>
+          <div class="course-block__meta-item">
+            <span class="course-block__meta-icon"><img src="{{ meta.hours_icon | relative_url }}" alt=""></span>
+            <span class="course-block__meta-label">{{ course.hours_label }}</span>
+            <span class="course-block__meta-value">{{ course.hours_value }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-block__topics">
+        <h4>محاور الدورة</h4>
+        <ul>
+          {% for topic in course.topics %}
+          <li>{{ topic }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="course-block__separator"><span></span></div>
+  </section>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% assign women_courses = course_blocks | where: "audience", "نساء" %}
+{% if women_courses.size > 0 %}
+<div class="course-blocks-group course-blocks-group--women">
+  <div class="container">
+    <h2 class="section-title section-title--pink">دورات النساء</h2>
+  </div>
+  {% for course in women_courses %}
+  <section class="course-block course-block--women">
+    <div class="container course-block__grid">
+      <div class="course-block__info">
+        <h3>{{ course.title }}</h3>
+        <div class="course-block__description">{{ course.content }}</div>
+        <div class="course-block__meta-row">
+          <div class="course-block__meta-item">
+            <span class="course-block__meta-icon"><img src="{{ meta.duration_icon | relative_url }}" alt=""></span>
+            <span class="course-block__meta-label">{{ course.duration_label }}</span>
+            <span class="course-block__meta-value">{{ course.duration_value }}</span>
+          </div>
+          <div class="course-block__meta-item">
+            <span class="course-block__meta-icon"><img src="{{ meta.certificate_icon | relative_url }}" alt=""></span>
+            <span class="course-block__meta-label">{{ course.certificate_label }}</span>
+            <span class="course-block__meta-value">{{ course.certificate_value }}</span>
+          </div>
+          <div class="course-block__meta-item">
+            <span class="course-block__meta-icon"><img src="{{ meta.category_icon | relative_url }}" alt=""></span>
+            <span class="course-block__meta-label">{{ course.category_label }}</span>
+            <span class="course-block__meta-value">{{ course.category_value }}</span>
+          </div>
+          <div class="course-block__meta-item">
+            <span class="course-block__meta-icon"><img src="{{ meta.hours_icon | relative_url }}" alt=""></span>
+            <span class="course-block__meta-label">{{ course.hours_label }}</span>
+            <span class="course-block__meta-value">{{ course.hours_value }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-block__topics">
+        <h4>محاور الدورة</h4>
+        <ul>
+          {% for topic in course.topics %}
+          <li>{{ topic }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="course-block__separator"><span></span></div>
+  </section>
+  {% endfor %}
+</div>
+{% endif %}
+
+<section class="course-system" style="--course-accent: {{ site.data.course_system.theme_color }};">
+  <div class="course-system__bokeh"></div>
+  <div class="container course-system__content">
+    <span class="course-system__divider"></span>
+    <h2>{{ site.data.course_system.title }}</h2>
+    <div class="course-system__grid">
+      {% for card in site.data.course_system.cards %}
+      <div class="course-system__card">
+        <img src="{{ card.icon | relative_url }}" alt="" class="course-system__icon">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="courses-stats" style="background-image: url('{{ site.data.courses_stats_section.background_image | relative_url }}');">
+  <div class="courses-stats__overlay"></div>
+  <div class="container courses-stats__grid">
+    {% for item in site.data.courses_stats_section.items %}
+    <div class="courses-stats__item">
+      <img src="{{ item.icon | relative_url }}" alt="" class="courses-stats__icon">
+      <span class="courses-stats__number" data-count="{{ item.number }}">0</span>
+      <span class="courses-stats__label">{{ item.label }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="featured-courses">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.executed_courses_title }}</h2>
+    <div class="featured-courses__grid">
+      {% assign executed = site.courses | sort: 'order' %}
+      {% for c in executed %}
+        {% if c.url and c.url != "" %}
+        <a href="{{ c.url }}" class="featured-courses__card">
+        {% else %}
+        <div class="featured-courses__card">
+        {% endif %}
+          <div class="featured-courses__thumb" style="background-image: url('{{ c.photo | relative_url }}');"></div>
+          {% if c.instructor and c.instructor != "" %}
+          <span class="featured-courses__instructor">{{ c.instructor }}</span>
+          {% endif %}
+          <h4 class="featured-courses__title">{{ c.title }}</h4>
+        {% if c.url and c.url != "" %}
+        </a>
+        {% else %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -13,24 +13,6 @@
   </div>
 </section>
 
-<section class="testimonials">
-  <div class="container">
-    <h2 class="section-title">{{ site.data.misc_titles.testimonials_title }}</h2>
-    <div class="testimonials__slider" id="testimonialSlider">
-      {% assign testimonials = site.testimonials | sort: 'order' %}
-      {% for t in testimonials %}
-      <div class="testimonials__slide{% if forloop.first %} is-active{% endif %}">
-        <img src="{{ t.photo | relative_url }}" alt="{{ t.name }}" class="testimonials__photo">
-        <p class="testimonials__quote">{{ t.quote }}</p>
-        <strong>{{ t.name }}</strong>
-      </div>
-      {% endfor %}
-      <button class="testimonials__arrow testimonials__arrow--prev" aria-label="السابق">‹</button>
-      <button class="testimonials__arrow testimonials__arrow--next" aria-label="التالي">›</button>
-    </div>
-  </div>
-</section>
-
 <section class="live-player">
   <div class="container live-player__widget">
     <img src="{{ site.data.radio_section.player.album_art | relative_url }}" alt="" class="live-player__art">
@@ -67,6 +49,26 @@
         {% endfor %}
       </tbody>
     </table>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">{{ site.data.misc_titles.testimonials_title }}</h2>
+    <div class="testimonials__slider" id="testimonialSlider">
+      {% assign testimonials = site.testimonials | sort: 'order' %}
+      {% for t in testimonials %}
+      <div class="testimonials__slide{% if forloop.first %} is-active{% endif %}">
+        <img src="{{ t.photo | relative_url }}" alt="{{ t.name }}" class="testimonials__photo">
+        <p class="testimonials__quote">{{ t.quote }}</p>
+        <strong>{{ t.name }}</strong>
+      </div>
+      {% endfor %}
+      {% if testimonials.size > 1 %}
+      <button class="testimonials__arrow testimonials__arrow--prev" aria-label="السابق">‹</button>
+      <button class="testimonials__arrow testimonials__arrow--next" aria-label="التالي">›</button>
+      {% endif %}
+    </div>
   </div>
 </section>
 

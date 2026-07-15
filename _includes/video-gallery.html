@@ -11,6 +11,7 @@
       {% endfor %}
     </div>
 
+    <h3 class="photo-strip__title">{{ site.data.misc_titles.gallery_section_title }}</h3>
     <div class="photo-strip">
       {% assign gallery = site.gallery | sort: 'order' %}
       {% for photo in gallery %}

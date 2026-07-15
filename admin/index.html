@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>لوحة تحكم محتوى الموقع — قِمَمُ الأندلس</title>
-  <!-- Keep this pinned version; test before bumping. -->
-
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>  <!-- Decap CMS reads config.yml from this same folder automatically. -->
+  <!-- Decap CMS reads config.yml from this same folder automatically. -->
+  <!-- Script must load here, at the end of <body>, so document.body already
+       exists when decap-cms.js runs and injects its app into the page. -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>

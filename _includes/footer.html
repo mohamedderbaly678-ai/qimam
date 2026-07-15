@@ -1,10 +1,7 @@
-<footer class="site-footer">
+<footer class="site-footer" id="footer">
   <div class="container site-footer__top">
     <img src="{{ site.data.footer.logo_image | relative_url }}" alt="{{ site.data.nav.logo_text }}" class="site-footer__logo">
     <h3>{{ site.data.footer.social_title }}</h3>
-  </div>
-
-  <div class="container site-footer__grid">
     <div class="site-footer__social">
       {% for link in site.data.footer.social_links %}
       <a href="{{ link.url }}" target="_blank" rel="noopener" class="site-footer__social-link" aria-label="{{ link.platform }}">
@@ -12,8 +9,30 @@
       </a>
       {% endfor %}
     </div>
-    <div class="site-footer__image">
-      <img src="{{ site.data.footer.side_image | relative_url }}" alt="">
+  </div>
+
+  <div class="container site-footer__contact">
+    <div class="site-footer__contact-grid">
+      {% for item in site.data.footer.contact_info %}
+      <div class="site-footer__contact-item">
+        <span class="site-footer__contact-icon">
+          <img src="{{ item.icon | relative_url }}" alt="">
+        </span>
+        <div>
+          <strong>{{ item.label }}</strong>
+          <span>{{ item.value }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="site-footer__map">
+      {% if site.data.footer.map_latitude and site.data.footer.map_longitude %}
+        {% assign map_src = "https://www.google.com/maps?q=" | append: site.data.footer.map_latitude | append: "," | append: site.data.footer.map_longitude | append: "&output=embed" %}
+      {% else %}
+        {% assign map_src = "https://www.google.com/maps?q=" | append: site.data.footer.map_address | uri_escape | append: "&output=embed" %}
+      {% endif %}
+      <iframe src="{{ map_src }}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 

@@ -1,7 +1,5 @@
-background_image: /assets/images/hero-placeholder.jpg
-title: "مؤسسة قِمَمُ الأندلس"
-subtitle: "مؤسسة تعليمية قرآنية تهدف إلى تخريج جيلٍ مُتمسكٍ بالكتاب والسنة"
-primary_button_text: "سجل الآن"
-primary_button_url: "#courses"
-secondary_button_text: "تعرف علينا"
-secondary_button_url: "#about"
+button_text: "تعرف علينا"
+button_url: "/#about"
+fallback_image: /assets/images/hero-placeholder.jpg
+fallback_title: "مؤسسة قِمَمُ الأندلس"
+fallback_subtitle: "مؤسسة تعليمية قرآنية تهدف إلى تخريج جيلٍ مُتمسكٍ بالكتاب والسنة"
