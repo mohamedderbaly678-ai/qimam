@@ -1,49 +1,45 @@
 logo_image: /assets/images/logo-placeholder.svg
-social_title: "مواقع التواصل الاجتماعي"
-
+social_title: مواقع التواصل الاجتماعي
 social_links:
-  - platform: "Facebook"
+  - platform: Facebook
     icon: /assets/images/icon-facebook.svg
-    url: "https://facebook.com/qimam"
-  - platform: "Twitter"
+    url: https://facebook.com/qimam
+  - platform: Twitter
     icon: /assets/images/icon-twitter.svg
-    url: "https://x.com/qimam"
-  - platform: "YouTube"
+    url: https://x.com/qimam
+  - platform: YouTube
     icon: /assets/images/icon-youtube.svg
-    url: "https://youtube.com/@qimam"
-  - platform: "Pinterest"
+    url: https://youtube.com/@qimam
+  - platform: Pinterest
     icon: /assets/images/icon-pinterest.svg
-    url: "https://pinterest.com/qimam"
-  - platform: "SoundCloud"
+    url: https://pinterest.com/qimam
+  - platform: SoundCloud
     icon: /assets/images/icon-soundcloud.svg
-    url: "https://soundcloud.com/qimam"
-  - platform: "Tumblr"
+    url: https://soundcloud.com/qimam
+  - platform: Tumblr
     icon: /assets/images/icon-tumblr.svg
-    url: "https://qimam.tumblr.com"
-
+    url: https://qimam.tumblr.com
 contact_info:
   - icon: /assets/images/icon-map-pin.svg
-    label: "العنوان"
-    value: "مسجد ..، مدينة طرابلس، ليبيا"
+    label: العنوان
+    value: مسجد ..، مدينة طرابلس، ليبيا
   - icon: /assets/images/icon-phone.svg
-    label: "الهاتف"
-    value: "+218-XX-XXXXXXX"
+    label: الهاتف
+    value: +218-XX-XXXXXXX
   - icon: /assets/images/icon-clock.svg
-    label: "ساعات العمل"
-    value: "الأحد - الخميس، 9:00 ص - 8:00 م"
+    label: ساعات العمل
+    value: الأحد - الخميس، 9:00 ص - 8:00 م
   - icon: /assets/images/icon-envelope.svg
-    label: "البريد الإلكتروني"
-    value: "info@qimam.com.ly"
+    label: البريد الإلكتروني
+    value: info@qimam.com.ly
   - icon: /assets/images/icon-globe.svg
-    label: "الموقع الإلكتروني"
-    value: "http://www.qimam.com.ly/"
+    label: الموقع الإلكتروني
+    value: http://www.qimam.com.ly/
   - icon: /assets/images/icon-mailbox.svg
-    label: "صندوق البريد"
+    label: صندوق البريد
     value: "ص.ب: XXXX"
-
-map_address: "Tripoli, Libya"
+map_address: Tripoli, Libya
 map_latitude: 32.8872
 map_longitude: 13.1913
-
-copyright_text: "جميع الحقوق محفوظة © مؤسسة قِمَم الأندلس"
-developer_credit: "powered by your-agency-name"
+copyright_text: جميع الحقوق محفوظة © مؤسسة قِمَم الأندلس
+developer_credit: powered by Mohamed Derbaly
