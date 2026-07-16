@@ -6,8 +6,8 @@ direction: rtl
 # IMPORTANT: change this to your real GitHub Pages URL before publishing.
 # If publishing to https://<user>.github.io/<repo>/ set baseurl: "/<repo>"
 # If publishing to a custom domain or https://<user>.github.io/ set baseurl: ""
-url: "https://your-username.github.io"
-baseurl: "/qimam-al-andalus"
+url: "https://mohamedderbaly678-ai.github.io"
+baseurl: "/qimam"
 
 collections:
   news:
